@@ -1,0 +1,50 @@
+<mat-toolbar color="primary">
+  <span>Contacts</span>
+  <span class="spacer"></span>
+</mat-toolbar>
+
+<div class="container mat-elevation-z8">
+
+  <div class="form">
+    <mat-form-field class="dash" color="accent">
+      <input matInput #filter [(ngModel)]="searchText" placeholder="Search">
+    </mat-form-field>
+   
+    <button mat-icon-button color="primary" (click)="addNew()">
+      <mat-icon>person_add</mat-icon>
+    </button>
+   </div>
+
+  
+ <div class="contact-list">
+   <div class="contact">
+    <div class="cell name">
+      <span class="PDfZbf" style="color:rgb(228, 18, 123)">Name</span>
+    </div>
+    <div class="cell phone">
+      <span style="color:rgb(228, 18, 123)">Phone Number</span>
+    </div><div class="cell actions"></div>
+  </div></div>
+
+
+
+<div class="contact-list">
+  <div class="contact" *ngFor="let contact of contactList| filter : searchText; let i = index">
+    <div class="cell name">
+      <span class="PDfZbf">{{contact.name}}</span>
+    </div>
+   
+    <div class="cell phone">
+      <span aria-label="Phone number">{{contact.phone}}</span>
+    </div>
+    <div class="cell actions">
+      <button mat-icon-button color="accent" (click)="startEdit(i, contact)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="accent" (click)="deleteItem(i, contact)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div></div>
+
+</div>

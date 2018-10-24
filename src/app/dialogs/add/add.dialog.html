@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<div class="container">
+  <h3 mat-dialog-title>New Contact</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field>
+        <input matInput #input class="form-control" placeholder="Name" [(ngModel)]="data.name" name="name" required >
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+
+   
+    <div class="form">
+      <mat-form-field>
+        <textarea matInput #input class="form-control" type="number" placeholder="Phone" [(ngModel)]="data.phone" name="phone" minlength="10" maxlength="10" required ></textarea>
+        <mat-error *ngIf="formControl.invalid">{{getErrorMessage(2)}}</mat-error>
+      </mat-form-field>
+    </div> 
+
+    <div mat-dialog-actions>
+      <button mat-button [type]="submit" [disabled]="!formControl.valid" color="accent" (click)="submit()">Save</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>
