@@ -22,7 +22,7 @@ export class AddDialogComponent {
   ]);
 
   getErrorMessage(n) {
-    return n==2? '10 digit number' :
+    return n==2? 'Enter a valid 10 digit number' :
       this.formControl.hasError('required') ? 'Required Field' :
         '';
   }

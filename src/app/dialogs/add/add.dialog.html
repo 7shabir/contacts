@@ -14,7 +14,8 @@
    
     <div class="form">
       <mat-form-field>
-        <textarea matInput #input class="form-control" type="number" placeholder="Phone" [(ngModel)]="data.phone" name="phone" minlength="10" maxlength="10" required ></textarea>
+        <input matInput #input class="form-control" type="number" placeholder="Phone" [(ngModel)]="data.phone"
+        name="phone" pattern="[6789][0-9]{9}" required >
         <mat-error *ngIf="formControl.invalid">{{getErrorMessage(2)}}</mat-error>
       </mat-form-field>
     </div> 

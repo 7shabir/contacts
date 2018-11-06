@@ -13,6 +13,7 @@
 .form {
   display: flex;
   padding-top: 6px;
+  overflow: hidden;
 }
 
 .mat-form-field {
@@ -20,3 +21,7 @@
   flex-grow: 1;
 }
 
+.mat-dialog-content{
+  overflow: hidden;
+  height: 190px;
+}
